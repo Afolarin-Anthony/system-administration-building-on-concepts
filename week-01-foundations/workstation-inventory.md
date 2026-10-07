@@ -143,3 +143,98 @@ server while allowing the physical host to remain stable and usable.
 - Which virtualization platform is appropriate?
 - Can both planned virtual machines run simultaneously?
 - What recovery method will be used?
+
+## Verified Workstation Characteristics
+
+| Characteristic | Finding | Administrative Significance |
+|---|---|---|
+| Operating system | [Windows 11] | [Supports Hyper-V, WSL, Virtualization] |
+| Architecture | [X64] | [Equipped to run both 32-bit and 64-bit softwares ] |
+| Processor | [AMD] | [Supports Virtualization, Processing speed] |
+| Physical cores | [Finding] | [Computing power determining efficiency] |
+| Logical processors | [4] | [Efficiency and optimization] |
+| Installed memory | [8GB, 20GB] | [Host needs memory to run, to check if what is left can run the VM] |
+| Free storage | [Not enough] | [Storage is needed for host to remain responsive and for VM to run] |
+| Virtualization status | [Disabled] | [Determine if a VM will run] |
+
+## Evidence Assessment
+
+| Statement | Classification | Supporting Evidence | Further Verification Needed |
+|---|---|---|---|
+| The system has [8GB] of memory | Verified | PowerShell system query | No |
+| Hardware virtualization is available | [Verified] | [Powershell system query] | [No] |
+| Two virtual machines can run reliably | [Unsure] | Capacity information only | Practical load test required |
+| Available storage is sufficient | [Unsure] | Current volume information | Storage allocation plan required |
+
+
+## Preliminary Capacity Decision
+
+### Proposed Laboratory
+
+Linux Virtual Machine and Windows Virtual Machine
+
+### Current Evidence
+
+Total storage of 239GB with 20GB already to Virtual Memory, Over 85% already to the system and installed applications.
+Memory is depleted with 1gb barely running freely.
+
+### Preliminary Decision
+
+Choose one:
+
+
+- The workstation does not appear suitable to run two Virtual Machines properly.
+
+
+### Reasoning
+
+Lack of sufficient storage and memory.
+
+### Risks
+
+- [Running a VM can completely take all storage and leave the host starving.]
+- [Running two VMs could damage or degrade the CPU, and hard disk]
+
+
+### Controls
+
+- [Only necessary updates are integrated]
+- [One VM is chosen for now]
+- [Look for and install lighter images.]
+
+### Information Still Required
+
+- [None]
+
+
+## Troubleshooting Exercise
+
+### Selected Command
+
+`[Get-Volume |
+    Select-Object DriveLetter, FileSystemLabel, FileSystem,
+    @{Name="SizeGB";Expression={:Round($_.Size / 1GB, 2)}},
+    @{Name="FreeGB";Expression={:Round($_.SizeRemaining / 1GB, 2)}}]`
+
+### Expected Result
+
+[Details of my storage devices]
+
+### Possible Unexpected Result
+
+[Showed only DriveLetter and Filesytem, no total size, free size.]
+
+### Investigation Approach
+
+1. Read the complete error or output.
+2. Confirm that the command was entered correctly.
+3. Determine whether permissions affect the result.
+4. Check whether the requested system component exists.
+5. Use an independent source of evidence.
+6. Compare the results.
+7. Document the conclusion and remaining uncertainty.
+
+### Important Lesson
+
+[There are different factors that should weigh in when an administrator tries to work with an unexplained result.
+Some of them are, compatibility, source of result, human error sanitization]
