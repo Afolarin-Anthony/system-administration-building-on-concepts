@@ -69,9 +69,26 @@ The workstation will be assessed against the proposed initial laboratory:
 Allocations will be decided after the physical workstation inventory is complete.
 
 ## Findings
-
-To be completed after collecting and reviewing the workstation information.
-
+ 
+The workstation has [8GB] of installed memory and approximately
+[20GB] of available storage. Hardware virtualization is
+[disabled].
+ 
+Based on the initial inspection, the workstation
+[appears] capable of supporting the proposed initial
+Windows and Linux virtual machines.
+ 
+## Limitations
+ 
+The principal limitations identified are:
+ 
+- [Storage available to run VMs"]
+- [Limitation or "None identified yet"]
+ 
+## Decision
+ 
+The workstation capacity will be used to determine the virtualization
+platform and the resource allocation for each planned virtual machine.
 ## Limitations
 
 To be completed after the capacity assessment.
