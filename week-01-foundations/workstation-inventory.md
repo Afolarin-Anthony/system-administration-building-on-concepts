@@ -96,3 +96,50 @@ To be completed after the capacity assessment.
 ## Decision
 
 A decision about the virtualization platform and virtual-machine capacity will be made after the inventory has been verified.
+
+
+## Pre-Inspection Reasoning
+
+### Why is an inventory necessary?
+
+[To understand the system. What does it have? , What can it do? What are it's limits?]
+
+### What resources will virtual machines consume?
+
+[CPU, Memory and a nightmare of storage.]
+
+### What could happen if I create virtual machines without assessing the host?
+
+[I could deprive the host the ability to function properly, create bottlenecks that threaten the funtion and availability of the host itself.]
+
+### Which workstation characteristics are most relevant to this laboratory?
+
+[Virtualization supported, Memory, Free Storage]
+
+### What do I expect to discover about this workstation?
+
+[That virtualization is supported, there is enough memory and storage to run at least two (2) virtual machines.]
+
+
+## Initial Laboratory Requirement
+
+The initial laboratory should support one Windows client and one Linux
+server while allowing the physical host to remain stable and usable.
+
+### Required Capabilities
+
+- Run two virtual machines when necessary
+- Provide each virtual machine with appropriate processor resources
+- Provide sufficient memory without exhausting the host
+- Store virtual disks and limited snapshots
+- Create an isolated virtual network
+- Restore or rebuild a damaged laboratory system
+
+### Questions to Resolve
+
+- How much memory can safely be assigned to virtual machines?
+- How much storage is available for virtual disks?
+- Is hardware virtualization enabled?
+- Which virtualization platform is appropriate?
+- Can both planned virtual machines run simultaneously?
+- What recovery method will be used?
