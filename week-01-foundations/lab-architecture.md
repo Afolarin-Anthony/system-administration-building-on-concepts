@@ -253,3 +253,25 @@ The initial design will be considered successfully implemented when:
 | AST-003 | LAB-LNX-01 | Virtual machine | Linux server administration | Laboratory owner | Planned | Rebuild or restore |
 | NET-001 | LAB-NET-01 | Virtual network | Controlled laboratory communication | Laboratory owner | Planned | Recreate from documentation |
 
+
+## What must be recoverable
+ -  Both VMs
+
+## What can simply be rebuilt
+ -  Only the network deisgn.
+ -  Both VMs and also the host can't just be rebuilt simply but tediously possible.
+
+## Which documents are stored in the repository
+ - Lab progress
+ - Concepts put in place
+   
+## How VM configuration and important laboratory data will be protected
+ -  Proper Sanitization of documents
+ -  Fictional naming for public documentation
+   
+## Why snapshots are not your entire recovery strategy
+ -  Snapshots can be corrupted and lost.
+ -  Saved Snaphots or recovery version can be stored offline or on the cloud.
+
+## What happens if the physical workstation fails
+ -  If there are cloud recovery images, they can be used.
