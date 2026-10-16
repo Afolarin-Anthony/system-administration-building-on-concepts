@@ -2,11 +2,11 @@
 
 ## Document Status
 
-Draft
+In Progress
 
 ## Purpose
 
-[Explain why the laboratory is being designed and what it must support.]
+The laboratory is designed to emulate the client-server relationship for better understanding of networking principles, systems configurations used for both small and large enterprises.
 
 ## Scope
 
