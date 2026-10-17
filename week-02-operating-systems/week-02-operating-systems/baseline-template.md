@@ -1,0 +1,2 @@
+# Virtual Machine Baseline Template
+
