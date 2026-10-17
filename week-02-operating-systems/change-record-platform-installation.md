@@ -146,16 +146,16 @@ Possible categories include:
 
 The change will be successful when:
 
-- [ ] The installation or feature-enablement process completes
-- [ ] The host restarts successfully if required
-- [ ] The host operating system remains usable
-- [ ] The virtualization management interface opens
-- [ ] The selected platform reports an operational state
-- [ ] Normal host network connectivity remains available
-- [ ] No unexplained critical errors are observed
-- [ ] Available storage remains within the accepted threshold
-- [ ] No virtual machines have been created prematurely
-- [ ] Documentation and inventory are updated
+- [x] The installation or feature-enablement process completes
+- [x] The host restarts successfully if required
+- [x] The host operating system remains usable
+- [x] The virtualization management interface opens
+- [x] The selected platform reports an operational state
+- [x] Normal host network connectivity remains available
+- [x] No unexplained critical errors are observed
+- [x] Available storage remains within the accepted threshold
+- [x] No virtual machines have been created prematurely
+- [x] Documentation and inventory are updated
 
 ## Failure Conditions
 
@@ -211,5 +211,72 @@ must be verified where testing is safe and practical.
 | Downloaded version | Virtualbox 7.2.20 |
 | Host package | Windows |
 | File name | Virtualbox 7.2.20 |
-| Integrity method | [Checksum comparison or not performed] |
-| Integrity result | [Match, mismatch, or not verified] |
+| Integrity method | Searched for |
+| Integrity result | a81777d2b36380ce042a29e9c554cf032eb46a793f62e3cc82e7411e535c2c26 |
+
+
+
+## Implementation Record
+
+| Field | Result |
+|---|---|
+| Implementation start | 09:37PM |
+| Implementation end | 11:09PM  |
+| Platform and version | VirtualBox 7.20.26 |
+| Installer or feature source | Virtualbox installer |
+| Administrative privilege used | Yes |
+| Restart required | Yes |
+| Restart completed | Yes |
+| Unexpected messages | None |
+| Deviations from plan | Yet to be checked |
+
+
+## Post-Change Validation
+
+| Test | Expected Result | Actual Result | Status | Evidence |
+|---|---|---|---|---|
+| Host starts correctly | Normal startup and sign-in | Host booted as normally expected | Pass | Host is booted |
+| Platform management interface opens | Interface opens without error | Interface opens without error | Pass | Platform is still on and interactive |
+| Platform state can be verified independently | Feature, service, or version can be queried | features, services and version are queried | Pass | Features and services are being queried |
+| Host networking remains functional | Normal approved connectivity works | Connectivity works | Pass| Host still connects with other devices |
+| Storage remains within threshold | Adequate free capacity remains | Storage shows slight increment | Pass | Storage increment |
+| Unexpected adapters are explained | Network changes match platform behavior | VMs can be connected as planned | Pass | New virtual adapters can be seen |
+| No VM exists yet | VM inventory is empty | Lab's plan cannot be furthered yet | Pass| Platform shows no signs of VMs |
+
+
+## Change Outcome
+
+Choose one:
+
+- Successful
+
+
+## Actual Changes Observed
+
+- New Virtual network adapters
+- Storage slightly taken up
+
+
+## Planned Versus Actual
+
+| Area | Planned State | Actual State | Deviation? |
+|---|---|---|---|
+| Platform installation | Completed | Completed] | No |
+| Host networking | New virtual adapters with Host's still responsive | Exactly as planned | No |
+| Storage | Able to run two virtual machines at once | Sure about running one VM | Possible deviation |
+| Restart | Run to confirm Host changes and stability | Host is stable | No |
+| Optional components | Functional | Functional | No |
+
+## Deviations
+
+A possible deviation is the inability of the host machine to run two virtual machines due to storage probelms.
+
+## Final Verification Decision
+
+The change satisfied its success criteria although not a 100% due to storage issue,
+
+## Lessons Learned
+
+
+There are still uncertainties that an administrator can encounter during a setup so therefore contigency plans must be in place.
+The safety and stability of the Host must always be a priority.
